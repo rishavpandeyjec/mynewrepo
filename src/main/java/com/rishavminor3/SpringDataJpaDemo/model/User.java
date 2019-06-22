@@ -1,9 +1,6 @@
 package com.rishavminor3.SpringDataJpaDemo.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -12,6 +9,7 @@ import javax.persistence.Id;
 
 @Entity
 @AllArgsConstructor
+@NoArgsConstructor
 @ToString
 public class User
 {
@@ -25,5 +23,9 @@ public class User
 
     @Getter @Setter
     private String lastName;
-    
+
+    public User(String firstName, String lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
 }
